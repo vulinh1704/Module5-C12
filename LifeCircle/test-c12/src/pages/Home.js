@@ -19,7 +19,7 @@ export function Home(props) {
 
     useEffect(() => {
         setUsers(listUser);
-    }, [])
+    })
 
     const add = () => {
         let user = {
