@@ -6,6 +6,7 @@ export function List() {
     const {state} = useLocation();
     const [students, setStudents] = useState([]);
     const [load, setLoad] = useState(true);
+
     useEffect(() => {
         axios.get('http://localhost:3001/students').then(res => {
             setStudents(res.data);

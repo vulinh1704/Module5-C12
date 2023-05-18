@@ -1,5 +1,6 @@
 import {useParams, useSearchParams} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
+import {useEffect} from "react";
 
 export function Edit() {
     const {id} = useParams();
@@ -7,7 +8,6 @@ export function Edit() {
     const navigate = useNavigate();
     console.log(searchParam.get('name'))
     console.log(id);
-
     return (
         <>
             <h1>Form Edit</h1>
