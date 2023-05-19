@@ -1,13 +1,13 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import {getStudents} from "./redux/action";
 import {useEffect} from "react";
+import {getStudents} from "./services/studentService";
 
 function App() {
     const dispatch = useDispatch();
-    const students = useSelector(({students}) => {
-        console.log(students)
-        return students;
+    const students = useSelector((state) => {
+        console.log(state)
+        return state;
     })
     useEffect(() => {
         dispatch(getStudents())
@@ -15,11 +15,11 @@ function App() {
     return (
         <>
             {
-                students.map(item => (
-                    <>
-                        {/*<h1>{item.name}, {item.age}</h1>*/}
-                    </>
-                ))
+                // students.map(item => (
+                //     <>
+                //         {/*<h1>{item.name}, {item.age}</h1>*/}
+                //     </>
+                // ))
             }
 
             {/*<button onClick={() => {*/}

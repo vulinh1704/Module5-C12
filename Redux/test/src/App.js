@@ -1,6 +1,6 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import {getData} from "./redux/action";
+import {getStudents} from "./services/studentService";
 
 function App() {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ function App() {
             <h1>Hahah</h1>
             {/*<h1>{state.name} , {state.age}</h1>*/}
             <button onClick={() => {
-                dispatch(getData());
+                dispatch(getStudents());
             }}>Click</button>
         </>
     );
