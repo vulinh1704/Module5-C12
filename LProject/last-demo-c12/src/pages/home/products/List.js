@@ -5,7 +5,6 @@ import {getProduct} from "../../../services/productService";
 export function List() {
     const dispatch = useDispatch();
     const products = useSelector(({products}) => {
-        console.log(products.list)
         return products.list;
     })
 
@@ -15,16 +14,19 @@ export function List() {
     return (
         <>
             <table border={1}>
-                <tr>
+                <thead>
+                <tr key={0}>
                     <td>Id</td>
                     <td>Name</td>
                     <td>Price</td>
                     <td>Quantity</td>
                     <td>Category</td>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     products.map(item => (
-                            <tr>
+                            <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.price}$</td>
@@ -34,8 +36,7 @@ export function List() {
                         )
                     )
                 }
-
-
+                </tbody>
             </table>
         </>
     )

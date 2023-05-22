@@ -8,7 +8,7 @@ export function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const submit = (user) => {
-        dispatch(login(user)).then(() => {
+        dispatch(login(user)).then((data) => {
             navigate('/home');
         });
     }
