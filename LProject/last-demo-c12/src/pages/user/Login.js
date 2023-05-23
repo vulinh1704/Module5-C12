@@ -8,8 +8,14 @@ export function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const submit = (user) => {
-        dispatch(login(user)).then(() => {
-            navigate('/home');
+        dispatch(login(user)).then((data) => {
+            console.log(data)
+            if(data.payload === "User is not exist"){
+                localStorage.clear();
+                navigate('/login');
+            } else {
+                navigate('/home');
+            }
         });
     }
     return (
